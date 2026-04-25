@@ -1,26 +1,281 @@
 @import "tailwindcss";
 
+/* ─── Design Tokens ──────────────────────────────────────────────────────────
+   Tier 1 — Core (primitive values, mode-agnostic)
+   Defined as CSS custom properties and exposed to Tailwind via @theme.
+   ──────────────────────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* neutral scale */
+  --color-neutral-50:  #F4F4F9;
+  --color-neutral-100: #EBEBF3;
+  --color-neutral-200: #D3D4E4;
+  --color-neutral-300: #ADAFCC;
+  --color-neutral-400: #8084B0;
+  --color-neutral-500: #606597;
+  --color-neutral-600: #4C4F7D;
+  --color-neutral-700: #3E4066;
+  --color-neutral-800: #363856;
+  --color-neutral-900: #313249;
+  --color-neutral-950: #060609;
+
+  /* brand green scale */
+  --color-green-50:  #F8FFE6;
+  --color-green-100: #EEFEC9;
+  --color-green-200: #DDFB9B;
+  --color-green-300: #C4F55D;
+  --color-green-400: #A4EF2C;
+  --color-green-500: #8BD50D;
+  --color-green-600: #6AAA06;
+  --color-green-700: #51810A;
+  --color-green-800: #42660E;
+  --color-green-900: #385611;
+  --color-green-950: #1B3003;
+
+  /* brand cream scale */
+  --color-cream-50:  #FAFAEC;
+  --color-cream-100: #EDF0BD;
+  --color-cream-200: #E8EAA5;
+  --color-cream-300: #DADD70;
+  --color-cream-400: #CDCF46;
+  --color-cream-500: #B9BA30;
+  --color-cream-600: #9A9725;
+  --color-cream-700: #797320;
+  --color-cream-800: #635D20;
+  --color-cream-900: #554F20;
+  --color-cream-950: #302C0E;
+
+  /* status — danger */
+  --color-danger-50:  #FEF2F2;
+  --color-danger-100: #FEE2E2;
+  --color-danger-200: #FECACA;
+  --color-danger-300: #FCA5A5;
+  --color-danger-400: #F87171;
+  --color-danger-500: #EF4444;
+  --color-danger-600: #DC2626;
+  --color-danger-700: #B91C1C;
+  --color-danger-800: #991B1B;
+  --color-danger-900: #7F1D1D;
+  --color-danger-950: #450A0A;
+
+  /* status — warning */
+  --color-warning-50:  #FFFBEB;
+  --color-warning-100: #FEF3C7;
+  --color-warning-200: #FDE68A;
+  --color-warning-300: #FCD34D;
+  --color-warning-400: #FBBF24;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #D97706;
+  --color-warning-700: #B45309;
+  --color-warning-800: #92400E;
+  --color-warning-900: #78350F;
+  --color-warning-950: #451A03;
+
+  /* status — success */
+  --color-success-50:  #F0FDF4;
+  --color-success-100: #DCFCE7;
+  --color-success-200: #BBF7D0;
+  --color-success-300: #86EFAC;
+  --color-success-400: #4ADE80;
+  --color-success-500: #22C55E;
+  --color-success-600: #16A34A;
+  --color-success-700: #15803D;
+  --color-success-800: #166534;
+  --color-success-900: #14532D;
+  --color-success-950: #052E16;
+
+  /* base */
+  --color-brand-black: #060609;
+  --color-brand-white: #FAFAFA;
+
+  /* ─── Tier 2 — Semantic (Light mode default) ─────────────────────────────── */
+
+  --color-bg:              var(--color-brand-white);
+  --color-bg-subtle:       var(--color-neutral-50);
+  --color-bg-inverse:      var(--color-neutral-950);
+  --color-bg-brand:        var(--color-green-500);
+  --color-bg-brand-subtle: var(--color-green-50);
+
+  --color-surface:         #FFFFFF;
+  --color-surface-raised:  var(--color-neutral-50);
+  --color-surface-overlay: var(--color-neutral-100);
+  --color-surface-sunken:  var(--color-cream-50);
+
+  --color-text:            var(--color-neutral-950);
+  --color-text-secondary:  var(--color-neutral-700);
+  --color-text-tertiary:   var(--color-neutral-500);
+  --color-text-disabled:   var(--color-neutral-400);
+  --color-text-inverse:    var(--color-brand-white);
+  --color-text-brand:      var(--color-green-700);
+  --color-text-on-brand:   var(--color-neutral-950);
+
+  --color-border:          var(--color-neutral-300);
+  --color-border-subtle:   var(--color-neutral-200);
+  --color-border-strong:   var(--color-neutral-500);
+  --color-border-brand:    var(--color-green-500);
+
+  --color-interactive-primary-bg:       var(--color-neutral-950);
+  --color-interactive-primary-fg:       var(--color-brand-white);
+  --color-interactive-primary-bg-hover: var(--color-neutral-800);
+  --color-interactive-secondary-fg:     var(--color-neutral-950);
+  --color-interactive-secondary-bd:     var(--color-neutral-300);
+  --color-interactive-secondary-bg-hover: var(--color-neutral-50);
+  --color-interactive-brand-bg:         var(--color-green-500);
+  --color-interactive-brand-fg:         var(--color-neutral-950);
+  --color-interactive-brand-bg-hover:   var(--color-green-600);
+
+  --color-status-danger-text:   var(--color-danger-700);
+  --color-status-danger-bg:     var(--color-danger-50);
+  --color-status-danger-border: var(--color-danger-200);
+  --color-status-danger-icon:   var(--color-danger-500);
+  --color-status-warning-text:  var(--color-warning-700);
+  --color-status-warning-bg:    var(--color-warning-50);
+  --color-status-warning-border:var(--color-warning-200);
+  --color-status-warning-icon:  var(--color-warning-500);
+  --color-status-success-text:  var(--color-success-700);
+  --color-status-success-bg:    var(--color-success-50);
+  --color-status-success-border:var(--color-success-200);
+  --color-status-success-icon:  var(--color-success-500);
+
+  /* ─── Radius tokens ──────────────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ─── Component tokens ───────────────────────────────────────────────────── */
+  --btn-radius:   var(--radius-full);
+  --btn-px:       24px;
+  --btn-py:       8px;
+  --card-radius:  var(--radius-xl);
+  --card-padding: 24px;
+  --input-radius: var(--radius-md);
 }
+
+/* ─── Tier 2 — Semantic (Dark mode overrides) ────────────────────────────────
+   Only semantic tokens change between modes. Primitives are mode-agnostic.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.dark {
+  --color-bg:              var(--color-neutral-950);
+  --color-bg-subtle:       var(--color-neutral-900);
+  --color-bg-inverse:      var(--color-brand-white);
+  --color-bg-brand:        var(--color-green-500);
+  --color-bg-brand-subtle: var(--color-green-950);
+
+  --color-surface:         var(--color-neutral-900);
+  --color-surface-raised:  var(--color-neutral-800);
+  --color-surface-overlay: var(--color-neutral-700);
+  --color-surface-sunken:  var(--color-neutral-950);
+
+  --color-text:            var(--color-brand-white);
+  --color-text-secondary:  var(--color-neutral-300);
+  --color-text-tertiary:   var(--color-neutral-500);
+  --color-text-disabled:   var(--color-neutral-700);
+  --color-text-inverse:    var(--color-neutral-950);
+  --color-text-brand:      var(--color-green-400);
+  --color-text-on-brand:   var(--color-neutral-950);
+
+  --color-border:          var(--color-neutral-700);
+  --color-border-subtle:   var(--color-neutral-800);
+  --color-border-strong:   var(--color-neutral-500);
+  --color-border-brand:    var(--color-green-500);
+
+  --color-interactive-primary-bg:         var(--color-brand-white);
+  --color-interactive-primary-fg:         var(--color-neutral-950);
+  --color-interactive-primary-bg-hover:   var(--color-neutral-200);
+  --color-interactive-secondary-fg:       var(--color-brand-white);
+  --color-interactive-secondary-bd:       var(--color-brand-white);
+  --color-interactive-secondary-bg-hover: var(--color-neutral-800);
+  --color-interactive-brand-bg:           var(--color-green-500);
+  --color-interactive-brand-fg:           var(--color-neutral-950);
+  --color-interactive-brand-bg-hover:     var(--color-green-400);
+
+  --color-status-danger-text:   var(--color-danger-300);
+  --color-status-danger-bg:     var(--color-danger-950);
+  --color-status-danger-border: var(--color-danger-800);
+  --color-status-danger-icon:   var(--color-danger-400);
+  --color-status-warning-text:  var(--color-warning-300);
+  --color-status-warning-bg:    var(--color-warning-950);
+  --color-status-warning-border:var(--color-warning-800);
+  --color-status-warning-icon:  var(--color-warning-400);
+  --color-status-success-text:  var(--color-success-300);
+  --color-status-success-bg:    var(--color-success-950);
+  --color-status-success-border:var(--color-success-800);
+  --color-status-success-icon:  var(--color-success-400);
+}
+
+/* ─── @theme — expõe os tokens ao Tailwind v4 ───────────────────────────────
+   Aqui os CSS vars viram classes utilitárias: bg-bg, text-text, etc.
+   ──────────────────────────────────────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* primitive scales */
+  --color-neutral-*:  initial;
+  --color-green-*:    initial;
+  --color-cream-*:    initial;
+  --color-danger-*:   initial;
+  --color-warning-*:  initial;
+  --color-success-*:  initial;
+
+  /* brand base */
+  --color-brand-black: var(--color-brand-black);
+  --color-brand-white: var(--color-brand-white);
+
+  /* semantic — usáveis como classes: bg-bg, text-text, etc. */
+  --color-bg:              var(--color-bg);
+  --color-bg-subtle:       var(--color-bg-subtle);
+  --color-bg-inverse:      var(--color-bg-inverse);
+  --color-bg-brand:        var(--color-bg-brand);
+  --color-bg-brand-subtle: var(--color-bg-brand-subtle);
+
+  --color-surface:         var(--color-surface);
+  --color-surface-raised:  var(--color-surface-raised);
+  --color-surface-overlay: var(--color-surface-overlay);
+  --color-surface-sunken:  var(--color-surface-sunken);
+
+  --color-text:            var(--color-text);
+  --color-text-secondary:  var(--color-text-secondary);
+  --color-text-tertiary:   var(--color-text-tertiary);
+  --color-text-disabled:   var(--color-text-disabled);
+  --color-text-inverse:    var(--color-text-inverse);
+  --color-text-brand:      var(--color-text-brand);
+  --color-text-on-brand:   var(--color-text-on-brand);
+
+  --color-border:          var(--color-border);
+  --color-border-subtle:   var(--color-border-subtle);
+  --color-border-strong:   var(--color-border-strong);
+  --color-border-brand:    var(--color-border-brand);
+
+  /* radius */
+  --radius-none: var(--radius-none);
+  --radius-xs:   var(--radius-xs);
+  --radius-sm:   var(--radius-sm);
+  --radius-md:   var(--radius-md);
+  --radius-lg:   var(--radius-lg);
+  --radius-xl:   var(--radius-xl);
+  --radius-2xl:  var(--radius-2xl);
+  --radius-full: var(--radius-full);
+
+  /* fonts */
+  --font-display: "BDO Grotesk", sans-serif;
+  --font-mono:    "Geist Mono", monospace;
+  --font-body:    "Geist", sans-serif;
+  --font-ui:      "Instrument Sans", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─── Base styles ────────────────────────────────────────────────────────────
+   Aplica o tema ao document root.
+   ──────────────────────────────────────────────────────────────────────────── */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
