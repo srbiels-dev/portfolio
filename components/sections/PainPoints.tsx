@@ -1,3 +1,5 @@
+import { FadeInSection } from "@/components/ui/FadeIn";
+
 const stats = [
   {
     number: "R$ 2K",
@@ -21,7 +23,7 @@ const stats = [
 
 export function PainPoints() {
   return (
-    <section
+    <FadeInSection
       aria-labelledby="pain-heading"
       className="flex flex-col gap-16 items-start overflow-hidden px-6 py-48 w-full"
     >
@@ -58,6 +60,6 @@ export function PainPoints() {
           </div>
         ))}
       </div>
-    </section>
+    </FadeInSection>
   );
 }

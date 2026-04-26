@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { button } from "@/components/ui/Button/variants";
+import { FadeInSection } from "@/components/ui/FadeIn";
 
 export function About() {
   return (
-    <section
+    <FadeInSection
       id="sobre"
       aria-labelledby="about-heading"
       className="flex flex-col items-end justify-center overflow-hidden px-6 py-32 w-full scroll-mt-[60px]"
@@ -28,6 +29,6 @@ export function About() {
           Vamos conversar
         </Link>
       </div>
-    </section>
+    </FadeInSection>
   );
 }

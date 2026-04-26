@@ -1,3 +1,5 @@
+import { FadeInSection } from "@/components/ui/FadeIn";
+
 function SectionLabel({ label }: { label: string }) {
   return (
     <div className="flex gap-[11px] items-center">
@@ -47,7 +49,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section
+    <FadeInSection
       aria-labelledby="process-heading"
       className="flex flex-col gap-12 items-start overflow-hidden px-6 py-6 w-full"
     >
@@ -76,6 +78,6 @@ export function Process() {
           </div>
         ))}
       </div>
-    </section>
+    </FadeInSection>
   );
 }

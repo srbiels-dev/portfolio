@@ -25,6 +25,8 @@ function SectionLabel({ label }: { label: string }) {
   );
 }
 
+import { FadeInSection } from "@/components/ui/FadeIn";
+
 const projects = [
   { name: "VAROS Academy", size: "24px" },
   { name: "Bardot Consultoria", size: "24px" },
@@ -33,7 +35,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section
+    <FadeInSection
       id="projetos"
       aria-labelledby="projects-heading"
       className="flex flex-col gap-10 items-start overflow-hidden px-6 py-6 w-full scroll-mt-[60px]"
@@ -59,6 +61,6 @@ export function Projects() {
           </article>
         ))}
       </div>
-    </section>
+    </FadeInSection>
   );
 }

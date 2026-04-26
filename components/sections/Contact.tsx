@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { button } from "@/components/ui/Button";
+import { FadeInSection } from "@/components/ui/FadeIn";
 
 const siteOptions = ["Não", "Sim", "Tenho mas não gosto"] as const;
 type SiteOption = (typeof siteOptions)[number];
@@ -48,7 +49,7 @@ export function Contact() {
   }
 
   return (
-    <section
+    <FadeInSection
       id="contato"
       aria-labelledby="contact-heading"
       className="flex gap-[clamp(40px,_9vw,_184px)] items-start overflow-hidden px-6 py-32 w-full scroll-mt-[60px]"
@@ -117,6 +118,6 @@ export function Contact() {
           Quero meu diagnóstico gratuito
         </button>
       </form>
-    </section>
+    </FadeInSection>
   );
 }

@@ -1,3 +1,5 @@
+import { FadeInSection } from "@/components/ui/FadeIn";
+
 const features = [
   {
     title: "Estratégia de conversão",
@@ -18,7 +20,7 @@ const features = [
 
 export function Services() {
   return (
-    <section
+    <FadeInSection
       aria-labelledby="services-heading"
       className="flex flex-col gap-14 items-start overflow-hidden px-6 py-32 w-full"
     >
@@ -48,6 +50,6 @@ export function Services() {
           ))}
         </div>
       </div>
-    </section>
+    </FadeInSection>
   );
 }
