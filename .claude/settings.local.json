@@ -3,7 +3,10 @@
     "allow": [
       "mcp__plugin_figma_figma__use_figma",
       "mcp__plugin_figma_figma__get_screenshot",
-      "WebFetch(domain:www.figma.com)"
+      "WebFetch(domain:www.figma.com)",
+      "Skill(design-md)",
+      "Skill(design-md:*)",
+      "mcp__plugin_figma_figma__get_design_context"
     ]
   },
   "enableAllProjectMcpServers": true,

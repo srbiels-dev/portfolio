@@ -261,11 +261,11 @@
   --radius-2xl:  var(--radius-2xl);
   --radius-full: var(--radius-full);
 
-  /* fonts */
-  --font-display: "BDO Grotesk", sans-serif;
-  --font-mono:    "Geist Mono", monospace;
-  --font-body:    "Geist", sans-serif;
-  --font-ui:      "Instrument Sans", sans-serif;
+  /* fonts — variables injected by next/font at runtime */
+  --font-display: var(--font-bricolage), sans-serif;
+  --font-mono:    var(--font-geist-mono), monospace;
+  --font-body:    var(--font-geist-sans), sans-serif;
+  --font-ui:      var(--font-instrument-sans), sans-serif;
 }
 
 /* ─── Base styles ────────────────────────────────────────────────────────────
@@ -278,4 +278,5 @@ html {
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
