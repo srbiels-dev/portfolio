@@ -7,17 +7,17 @@
 
 :root {
   /* neutral scale */
-  --color-neutral-50:  #F4F4F9;
-  --color-neutral-100: #EBEBF3;
-  --color-neutral-200: #D3D4E4;
-  --color-neutral-300: #ADAFCC;
-  --color-neutral-400: #8084B0;
-  --color-neutral-500: #606597;
-  --color-neutral-600: #4C4F7D;
-  --color-neutral-700: #3E4066;
-  --color-neutral-800: #363856;
-  --color-neutral-900: #313249;
-  --color-neutral-950: #060609;
+  --color-neutral-50:  #FAFAFA;
+  --color-neutral-100: #F4F4F5;
+  --color-neutral-200: #E3E5E8;
+  --color-neutral-300: #D3D5D9;
+  --color-neutral-400: #9EA3AD;
+  --color-neutral-500: #6E737D;
+  --color-neutral-600: #4B5059;
+  --color-neutral-700: #3D4148;
+  --color-neutral-800: #26282B;
+  --color-neutral-900: #17191C;
+  --color-neutral-950: #08090C;
 
   /* brand green scale */
   --color-green-50:  #F8FFE6;
