@@ -52,17 +52,17 @@ export function Contact() {
     <FadeInSection
       id="contato"
       aria-labelledby="contact-heading"
-      className="flex gap-[clamp(40px,_9vw,_184px)] items-start overflow-hidden px-6 py-32 w-full scroll-mt-[60px]"
+      className="flex flex-col lg:flex-row gap-12 lg:gap-[clamp(40px,_9vw,_184px)] items-start overflow-hidden px-6 py-20 lg:py-32 w-full scroll-mt-[60px]"
     >
       {/* Left — headline */}
-      <div className="flex flex-col gap-6 items-start w-full max-w-[766px] text-text shrink-0">
+      <div className="flex flex-col gap-6 items-start w-full lg:max-w-[766px] text-text lg:shrink-0">
         <h2
           id="contact-heading"
-          className="font-display text-[64px] leading-[1.2] tracking-[-0.02em] w-full"
+          className="font-display text-[clamp(36px,_7.5vw,_64px)] leading-[1.15] md:leading-[1.2] tracking-[-0.02em] w-full"
         >
           Vamos criar o que seu negócio merece.
         </h2>
-        <p className="font-body text-[16px] leading-[1.2] w-full">
+        <p className="font-body text-[16px] leading-[1.4] lg:leading-[1.2] w-full">
           Me conta um pouco do seu negócio. Eu te respondo em até 24h com um
           diagnóstico gratuito da sua presença online — e te mostro onde você tá
           deixando dinheiro na mesa.
@@ -72,7 +72,7 @@ export function Contact() {
       {/* Right — form */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-1 flex-col gap-14 items-start justify-center min-w-0"
+        className="flex w-full lg:flex-1 flex-col gap-10 lg:gap-14 items-start justify-center lg:min-w-0"
       >
         <BottomBorderInput label="SEU NOME" name="name" required />
         <BottomBorderInput label="NOME DO NEGÓCIO" name="business" required />
@@ -94,7 +94,7 @@ export function Contact() {
                 key={opt}
                 type="button"
                 onClick={() => setSiteStatus(opt)}
-                className={`border border-[#787878] flex items-center justify-center p-6 text-text font-body text-[18px] tracking-[-0.02em] whitespace-nowrap transition-colors duration-200 ${
+                className={`border border-[#787878] flex items-center justify-center px-4 py-4 md:p-6 text-text font-body text-[16px] md:text-[18px] tracking-[-0.02em] whitespace-nowrap transition-colors duration-200 ${
                   siteStatus === opt
                     ? "bg-text text-bg border-text"
                     : "bg-transparent hover:border-text"

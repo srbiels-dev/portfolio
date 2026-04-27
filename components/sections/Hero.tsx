@@ -17,14 +17,14 @@ export function Hero() {
     <section
       id="sobre"
       aria-labelledby="hero-heading"
-      className="flex flex-col items-start overflow-hidden px-6 pt-[113px] pb-[113px] w-full scroll-mt-[60px]"
+      className="flex flex-col items-start overflow-hidden px-6 pt-20 pb-20 lg:pt-[113px] lg:pb-[113px] w-full scroll-mt-[60px]"
     >
       <div className="flex flex-col gap-6 items-start w-full max-w-[1200px]">
         <div className="flex flex-col gap-4 items-start w-full">
           {/* H1 — word by word */}
           <h1
             id="hero-heading"
-            className="font-display text-text text-[100px] leading-[1.2] tracking-[-0.02em] w-full flex flex-wrap gap-x-[0.22em]"
+            className="font-display text-text leading-[1.1] md:leading-[1.2] tracking-[-0.02em] w-full flex flex-wrap gap-x-[0.18em] md:gap-x-[0.22em] text-[clamp(40px,_10vw,_100px)]"
           >
             {WORDS.map((word, i) => (
               <motion.span
@@ -52,7 +52,7 @@ export function Hero() {
               ease: [0.16, 1, 0.3, 1],
               delay: SUBTEXT_DELAY,
             }}
-            className="text-text-secondary text-[20px] leading-[1.2] tracking-[-0.02em] font-body w-full max-w-[763px]"
+            className="text-text-secondary text-[16px] md:text-[20px] leading-[1.3] md:leading-[1.2] tracking-[-0.02em] font-body w-full max-w-[763px]"
           >
             Se a resposta é um site meia-boca, uma página desatualizada ou
             simplesmente nada — você tá pagando pra mandar cliente pro

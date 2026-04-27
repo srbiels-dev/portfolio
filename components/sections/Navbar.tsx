@@ -5,7 +5,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       <nav
-        className="flex items-center justify-between px-10 py-4 backdrop-blur-sm"
+        className="flex items-center justify-between gap-4 px-6 lg:px-10 py-4 backdrop-blur-sm"
         aria-label="Main navigation"
       >
         {/* Wordmark */}
@@ -17,8 +17,11 @@ export function Navbar() {
           baius
         </Link>
 
-        {/* Nav links */}
-        <ul className="flex gap-[52px] items-center list-none" role="list">
+        {/* Nav links — hidden on mobile, visible from md up */}
+        <ul
+          className="hidden md:flex gap-8 lg:gap-[52px] items-center list-none"
+          role="list"
+        >
           {[
             { href: "#sobre", label: "sobre" },
             { href: "#projetos", label: "projetos" },

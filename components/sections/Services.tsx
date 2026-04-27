@@ -22,28 +22,31 @@ export function Services() {
   return (
     <FadeInSection
       aria-labelledby="services-heading"
-      className="flex flex-col gap-14 items-start overflow-hidden px-6 py-32 w-full"
+      className="flex flex-col gap-12 lg:gap-14 items-start overflow-hidden px-6 py-20 lg:py-32 w-full"
     >
       <h2
         id="services-heading"
-        className="font-display text-text text-[64px] leading-[1.2] tracking-[-0.02em] max-w-[969px]"
+        className="font-display text-text text-[clamp(36px,_7.5vw,_64px)] leading-[1.15] md:leading-[1.2] tracking-[-0.02em] max-w-[969px]"
       >
         Eu não faço site bonito. Eu faço página que trabalha por você.
       </h2>
 
       {/* Two-column layout */}
-      <div className="flex gap-[114px] items-start w-full">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-[114px] items-start w-full">
         {/* Image placeholder */}
-        <div className="flex-1 min-w-0 aspect-[566/440] bg-[#2b2d33] rounded-2xl" />
+        <div className="w-full lg:flex-1 lg:min-w-0 aspect-[566/440] bg-[#2b2d33] rounded-2xl" />
 
         {/* Feature list */}
-        <div className="flex flex-col gap-14 items-start justify-center shrink-0">
+        <div className="flex flex-col gap-10 lg:gap-14 items-start justify-center w-full lg:w-auto lg:shrink-0">
           {features.map((f) => (
-            <div key={f.title} className="flex flex-col gap-6 items-start w-[603px]">
-              <h3 className="font-display font-bold text-text text-[24px] leading-[1.2] tracking-[-0.025em]">
+            <div
+              key={f.title}
+              className="flex flex-col gap-4 lg:gap-6 items-start w-full lg:w-[603px]"
+            >
+              <h3 className="font-display font-bold text-text text-[20px] md:text-[24px] leading-[1.2] tracking-[-0.025em]">
                 {f.title}
               </h3>
-              <p className="font-body text-text-tertiary text-[18px] leading-[1.4] tracking-[-0.02em]">
+              <p className="font-body text-text-tertiary text-[16px] md:text-[18px] leading-[1.4] tracking-[-0.02em]">
                 {f.description}
               </p>
             </div>

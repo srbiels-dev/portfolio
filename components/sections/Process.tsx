@@ -1,4 +1,5 @@
 import { FadeInSection } from "@/components/ui/FadeIn";
+import { AnimatedArrow } from "@/components/ui/AnimatedArrow";
 
 function SectionLabel({ label }: { label: string }) {
   return (
@@ -6,22 +7,7 @@ function SectionLabel({ label }: { label: string }) {
       <span className="font-mono text-text text-[18px] tracking-[-0.02em] font-normal">
         {label}
       </span>
-      <svg
-        className="rotate-90 shrink-0"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M4 10h12M11 5l5 5-5 5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <AnimatedArrow />
     </div>
   );
 }
@@ -51,28 +37,28 @@ export function Process() {
   return (
     <FadeInSection
       aria-labelledby="process-heading"
-      className="flex flex-col gap-12 items-start overflow-hidden px-6 py-6 w-full"
+      className="flex flex-col gap-10 lg:gap-12 items-start overflow-hidden px-6 py-6 w-full"
     >
       <SectionLabel label="PROCESSO" />
 
-      <div className="flex gap-6 items-start w-full">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-6 items-start w-full">
         {steps.map((step) => (
           <div
             key={step.number}
-            className="flex flex-1 flex-col gap-6 items-start min-w-0 pt-6 border-t border-transparent"
+            className="flex flex-1 flex-col gap-4 lg:gap-6 items-start min-w-0 w-full pt-6 border-t border-transparent"
           >
             <div className="flex flex-col gap-1 items-start">
-              <p className="font-display text-text-tertiary text-[64px] leading-[1.2] tracking-[-0.02em]">
+              <p className="font-display text-text-tertiary text-[clamp(44px,_10vw,_64px)] leading-[1.2] tracking-[-0.02em]">
                 {step.number}
               </p>
               <h3
                 id={step.number === "01" ? "process-heading" : undefined}
-                className="font-display text-text text-[24px] leading-[1.2]"
+                className="font-display text-text text-[20px] md:text-[24px] leading-[1.2]"
               >
                 {step.title}
               </h3>
             </div>
-            <p className="font-body text-text-secondary text-[16px] leading-[1.4]">
+            <p className="font-body text-text-secondary text-[15px] md:text-[16px] leading-[1.4]">
               {step.description}
             </p>
           </div>
