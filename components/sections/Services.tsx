@@ -39,8 +39,8 @@ export function Services() {
         {/* Feature list */}
         <div className="flex flex-col gap-14 items-start justify-center shrink-0">
           {features.map((f) => (
-            <div key={f.title} className="flex flex-col gap-6 items-start w-[397px]">
-              <h3 className="font-display font-bold text-text text-[20px] leading-[1.2] tracking-[-0.025em]">
+            <div key={f.title} className="flex flex-col gap-6 items-start w-[603px]">
+              <h3 className="font-display font-bold text-text text-[24px] leading-[1.2] tracking-[-0.025em]">
                 {f.title}
               </h3>
               <p className="font-body text-text-tertiary text-[18px] leading-[1.4] tracking-[-0.02em]">

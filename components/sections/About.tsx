@@ -12,7 +12,7 @@ export function About() {
       <div className="flex flex-col gap-8 items-start max-w-[859px] w-full">
         <h2
           id="about-heading"
-          className="font-display text-text text-[64px] leading-[1.2] tracking-[-0.02em] w-full"
+          className="font-display text-text text-[64px] leading-[1.2] tracking-[-0.02em] max-w-[740px]"
         >
           Eu sou o Gabriel, e eu crio páginas que focam na dor do seu negócio.
         </h2>
