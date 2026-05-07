@@ -33,15 +33,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  drawer,
 }: Readonly<{
   children: React.ReactNode;
+  drawer: React.ReactNode;
 }>) {
   return (
     <html
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} ${bricolage.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        {drawer}
+      </body>
     </html>
   );
 }
