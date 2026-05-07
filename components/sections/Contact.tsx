@@ -94,10 +94,10 @@ export function Contact() {
                 key={opt}
                 type="button"
                 onClick={() => setSiteStatus(opt)}
-                className={`border border-[#787878] flex items-center justify-center px-4 py-4 md:p-6 text-text font-body text-[16px] md:text-[18px] tracking-[-0.02em] whitespace-nowrap transition-colors duration-200 ${
+                className={`border flex items-center justify-center px-4 py-4 md:p-6 font-body text-[16px] md:text-[18px] tracking-[-0.02em] whitespace-nowrap transition-colors duration-200 ${
                   siteStatus === opt
                     ? "bg-text text-bg border-text"
-                    : "bg-transparent hover:border-text"
+                    : "bg-transparent text-text border-[#787878] hover:border-text"
                 }`}
               >
                 {opt}

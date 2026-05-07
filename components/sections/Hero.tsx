@@ -15,7 +15,6 @@ const BUTTONS_DELAY = SUBTEXT_DELAY + 0.25;
 export function Hero() {
   return (
     <section
-      id="sobre"
       aria-labelledby="hero-heading"
       className="flex flex-col items-start overflow-hidden px-6 pt-20 pb-20 lg:pt-[113px] lg:pb-[113px] w-full scroll-mt-[60px]"
     >

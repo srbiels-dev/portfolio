@@ -23,9 +23,9 @@ export function Navbar() {
           role="list"
         >
           {[
-            { href: "#sobre", label: "sobre" },
-            { href: "#projetos", label: "projetos" },
-            { href: "#contato", label: "contato" },
+            { href: "/#sobre", label: "sobre" },
+            { href: "/#projetos", label: "projetos" },
+            { href: "/#contato", label: "contato" },
           ].map(({ href, label }) => (
             <li key={href}>
               <Link
@@ -40,7 +40,7 @@ export function Navbar() {
 
         {/* CTA */}
         <Link
-          href="#contato"
+          href="/#contato"
           className={button({ variant: "primary", size: "sm" })}
         >
           Falar comigo
