@@ -112,18 +112,30 @@ export function ProjectContent({ project }: { project: Project }) {
             <h1 className="font-display text-text text-[clamp(36px,_6vw,_64px)] leading-[1.1] tracking-[-0.02em] max-w-[860px]">
               {project.name}
             </h1>
-            {project.liveUrl && (
-              <Link
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Abrir ${project.name} em uma nova aba`}
-                className={`${button({ variant: "secondary", size: "sm" })} self-start lg:self-end lg:mb-2`}
-              >
-                Ver site no ar
-                <ExternalLinkIcon />
-              </Link>
-            )}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 self-start lg:self-end lg:mb-2">
+              {project.liveDemoPath && (
+                <Link
+                  href={project.liveDemoPath}
+                  aria-label={`Abrir landing ao vivo de ${project.name}`}
+                  className={button({ variant: "primary", size: "sm" })}
+                >
+                  Ver landing ao vivo
+                  <ExternalLinkIcon />
+                </Link>
+              )}
+              {project.liveUrl && (
+                <Link
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Abrir ${project.name} em uma nova aba`}
+                  className={button({ variant: "secondary", size: "sm" })}
+                >
+                  Ver site no ar
+                  <ExternalLinkIcon />
+                </Link>
+              )}
+            </div>
           </div>
           <p className="font-body text-text-secondary text-[18px] md:text-[22px] leading-[1.4] max-w-[860px]">
             {project.tagline}

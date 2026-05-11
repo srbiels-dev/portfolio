@@ -9,6 +9,8 @@ export type Project = {
   cover?: string;
   gallery?: string[];
   liveUrl?: string;
+  /** Internal route to a live demo rendered inside the portfolio (e.g. "/projetos/carries/live"). */
+  liveDemoPath?: string;
   overview: string;
   challenge: string;
   solution: string;
@@ -41,6 +43,25 @@ export const projects: Project[] = [
     challenge: "",
     solution: "",
     impact: "",
+  },
+  {
+    slug: "carries",
+    name: "CARRIES",
+    client: "Projeto autoral",
+    year: 2026,
+    tagline:
+      "Café-tributo a uma dachshund. Identidade e landing bilíngue.",
+    services: ["Brand Design", "UI Design", "Next.js"],
+    cardSize: "24px",
+    liveDemoPath: "/projetos/carries/live",
+    overview:
+      "CARRIES é um café fictício em Botafogo construído inteiramente em volta de Carrie — uma dachshund preta de pelo curto. O projeto começou como exercício de identidade visual e virou um sistema de marca + landing page bilíngue (PT/EN) que renderiza dentro do próprio portfolio, com tema isolado dos demais projetos.",
+    challenge:
+      "Como traduzir a personalidade de UM cachorro em uma marca inteira sem cair no kitsch? A maioria das marcas pet-themed se rende ao mascote sorridente. Aqui queria o oposto: uma identidade editorial, contemplativa, que tratasse o dachshund como musa — não personagem de embalagem. O tom tinha que casar com a cultura de specialty coffee de Botafogo, ser bilíngue desde a primeira linha de copy, e funcionar como case técnico de tema isolado dentro de um Next.js app.",
+    solution:
+      "Sistema de marca em duas tipografias contrastantes (Quicksand pra estrutura, Gloria Hallelujah pra alma manuscrita), paleta fechada em quatro cores terrosas (Linen, Ash Brown, Dust Grey, Graphite) e ilustração linear minimalista da Carrie usada como assinatura, não como mascote. A landing renderiza em /projetos/carries/live com um tema CSS escopado — os mesmos tokens semânticos do design system (--color-bg, --color-text) são sobrescritos dentro de uma classe wrapper, sem afetar o resto do portfolio. Copy bilíngue gerenciada por context React + toggle visível no header.",
+    impact:
+      "O projeto vira um duplo case: identidade visual coerente (logo + tipografia + paleta + fotografia + ilustração) E demonstração técnica de como rodar uma marca com tema completamente diferente dentro do mesmo Next.js sem CSS leak. A landing é navegável, bilíngue, com modal de reserva e seções editoriais — não uma mockup, mas o produto final renderizando.",
   },
   {
     slug: "varos-consultoria",

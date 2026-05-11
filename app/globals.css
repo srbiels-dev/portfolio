@@ -280,3 +280,65 @@ html {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
+
+/* ─── CARRIES project — scoped theme ─────────────────────────────────────────
+   Overrides semantic tokens within a wrapper. The portfolio uses dark mode
+   globally on <html>; this scope reverts to a warm light palette without
+   touching the rest of the app.
+   Palette: Linen (bg), Graphite (text), Ash Brown (accent), Dust Grey (subtle).
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.theme-carries {
+  /* raw palette */
+  --carries-linen:      #F4EDE2;
+  --carries-graphite:   #30302F;
+  --carries-ash-brown:  #70594B;
+  --carries-dust-grey:  #CFCBC4;
+  --carries-linen-soft: #EFE6D8;
+  --carries-linen-deep: #E6DCC8;
+
+  /* semantic — overrides portfolio tokens inside this scope */
+  --color-bg:              var(--carries-linen);
+  --color-bg-subtle:       var(--carries-linen-soft);
+  --color-bg-inverse:      var(--carries-graphite);
+
+  --color-surface:         var(--carries-linen);
+  --color-surface-raised:  var(--carries-linen-soft);
+  --color-surface-overlay: var(--carries-linen-deep);
+  --color-surface-sunken:  var(--carries-linen-deep);
+
+  --color-text:            var(--carries-graphite);
+  --color-text-secondary:  var(--carries-ash-brown);
+  --color-text-tertiary:   #8A7666;
+  --color-text-inverse:    var(--carries-linen);
+
+  --color-border:          var(--carries-dust-grey);
+  --color-border-subtle:   #E2DCD0;
+  --color-border-strong:   var(--carries-ash-brown);
+
+  --color-interactive-primary-bg:         var(--carries-ash-brown);
+  --color-interactive-primary-fg:         var(--carries-linen);
+  --color-interactive-primary-bg-hover:   var(--carries-graphite);
+  --color-interactive-secondary-fg:       var(--carries-graphite);
+  --color-interactive-secondary-bd:       var(--carries-graphite);
+  --color-interactive-secondary-bg-hover: var(--carries-linen-soft);
+
+  /* fonts inside the scope */
+  --font-display: var(--font-quicksand), system-ui, sans-serif;
+  --font-body:    var(--font-quicksand), system-ui, sans-serif;
+  --font-ui:      var(--font-quicksand), system-ui, sans-serif;
+  --font-hand:    var(--font-gloria), cursive;
+
+  /* component tweaks for warmer feel */
+  --radius-xl: 18px;
+  --btn-radius: var(--radius-full);
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-display);
+}
+
+/* expose font-hand as a utility inside the scope */
+.theme-carries .font-hand {
+  font-family: var(--font-hand);
+}

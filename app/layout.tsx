@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Sans, Bricolage_Grotesque } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Instrument_Sans,
+  Bricolage_Grotesque,
+  Quicksand,
+  Gloria_Hallelujah,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,6 +32,18 @@ const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
+// CARRIES project fonts — only consumed inside .theme-carries scope
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin"],
+});
+
+const gloriaHallelujah = Gloria_Hallelujah({
+  variable: "--font-gloria",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Baius Design — Gabriel Ferraz",
   description:
@@ -41,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} ${bricolage.variable} dark h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} ${bricolage.variable} ${quicksand.variable} ${gloriaHallelujah.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}
