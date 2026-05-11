@@ -11,7 +11,7 @@ export function CarriesEventos() {
   return (
     <section
       id="eventos"
-      className="relative w-full px-6 lg:px-16 py-24 lg:py-32 scroll-mt-20"
+      className="relative z-10 w-full px-6 lg:px-16 py-24 lg:py-32 scroll-mt-20 bg-(--color-bg) rounded-t-[28px] shadow-[0_-12px_32px_-20px_rgba(48,48,47,0.18)]"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-12">
         <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">

@@ -22,8 +22,10 @@ export function CarriesLanding() {
               <CarriesHero />
               <CarriesSobre />
             </div>
-            <CarriesMenu />
-            <CarriesEventos />
+            <div className="relative">
+              <CarriesMenu />
+              <CarriesEventos />
+            </div>
             <CarriesVisite />
           </main>
           <CarriesFooter />
