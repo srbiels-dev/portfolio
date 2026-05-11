@@ -62,7 +62,7 @@ export function CarriesHero() {
   return (
     <section
       id="top"
-      className="sticky top-0 z-0 w-full min-h-screen flex flex-col px-6 pt-6 pb-12 lg:pb-16 overflow-hidden"
+      className="sticky top-16 z-0 w-full min-h-[calc(100vh-4rem)] flex flex-col px-6 pt-6 pb-10 overflow-hidden"
     >
       <PaperGrain />
       <HeroPhotos />
@@ -107,7 +107,7 @@ function HeroPhotos() {
       </motion.div>
       <motion.div
         variants={photoSquare}
-        className="relative hidden sm:block w-[clamp(100px,13vw,180px)] aspect-square mt-[clamp(60px,13vw,180px)] overflow-hidden rounded-[var(--radius-xl)] border border-(--carries-dust-grey) bg-(--carries-linen-deep)"
+        className="relative hidden sm:block w-[clamp(90px,10vw,150px)] aspect-square mt-[clamp(50px,9vw,130px)] overflow-hidden rounded-[var(--radius-xl)] border border-(--carries-dust-grey) bg-(--carries-linen-deep)"
       >
         <video
           src={HERO_VIDEO_SRC}
@@ -131,7 +131,7 @@ function HeroCopy() {
       variants={copyStagger}
       initial="hidden"
       animate="show"
-      className="relative flex flex-col gap-5 lg:gap-6 pt-10 lg:pt-6 lg:mt-auto"
+      className="relative flex flex-col gap-5 lg:gap-6 pt-10 lg:pt-6 lg:mt-20"
     >
       <motion.h1
         variants={headline}
