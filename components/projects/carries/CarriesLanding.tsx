@@ -18,8 +18,10 @@ export function CarriesLanding() {
         <div className="theme-carries min-h-screen">
           <CarriesNavbar />
           <main className="flex flex-col">
-            <CarriesHero />
-            <CarriesSobre />
+            <div className="relative">
+              <CarriesHero />
+              <CarriesSobre />
+            </div>
             <CarriesMenu />
             <CarriesEventos />
             <CarriesVisite />

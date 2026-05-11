@@ -61,7 +61,10 @@ export function CarriesSobre() {
   const { t } = useLanguage();
 
   return (
-    <section id="sobre" className="relative w-full px-6 lg:px-16 py-24 lg:py-32 scroll-mt-20">
+    <section
+      id="sobre"
+      className="relative z-10 w-full px-6 lg:px-16 py-24 lg:py-32 scroll-mt-20 bg-(--color-bg) rounded-t-[28px] shadow-[0_-12px_32px_-20px_rgba(48,48,47,0.18)]"
+    >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-24">
         {/* História */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">

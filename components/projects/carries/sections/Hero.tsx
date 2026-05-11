@@ -1,9 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import { useLanguage } from "../LanguageContext";
 import { useReserve } from "../ReserveContext";
-import { PhotoSlot } from "../PhotoSlot";
+
+const HERO_IMAGE_SRC =
+  "/projetos/carries/31295b48-f495-492b-a958-a7ad0e294b2d%201.png";
+const HERO_CUP_SRC = "/projetos/carries/Frame%2012.png";
+const HERO_VIDEO_SRC =
+  "/projetos/carries/27e9e33f-50b1-48de-acd5-e972011d111d.mp4";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -12,7 +18,12 @@ const photosStagger: Variants = {
   show: { transition: { staggerChildren: 0.18, delayChildren: 0.1 } },
 };
 
-const photoLandscape: Variants = {
+const photoLeft: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 1, ease: EASE } },
+};
+
+const photoRight: Variants = {
   hidden: { opacity: 0, y: -14, scale: 1.02 },
   show: {
     opacity: 1,
@@ -51,7 +62,7 @@ export function CarriesHero() {
   return (
     <section
       id="top"
-      className="relative w-full min-h-[88vh] flex flex-col px-6 lg:px-12 pt-10 lg:pt-14 pb-12 lg:pb-16 overflow-hidden"
+      className="sticky top-0 z-0 w-full min-h-screen flex flex-col px-6 pt-6 pb-12 lg:pb-16 overflow-hidden"
     >
       <PaperGrain />
       <HeroPhotos />
@@ -66,22 +77,46 @@ function HeroPhotos() {
       variants={photosStagger}
       initial="hidden"
       animate="show"
-      className="relative flex justify-end items-start gap-4 lg:gap-6"
+      className="relative flex items-start gap-3 lg:gap-6"
     >
       <motion.div
-        variants={photoLandscape}
-        className="w-[clamp(200px,26vw,330px)] aspect-[330/248]"
+        variants={photoLeft}
+        className="relative mr-auto w-[clamp(140px,22vw,290px)] aspect-[330/248] overflow-hidden rounded-[var(--radius-xl)] bg-(--carries-linen-deep)"
       >
-        <PhotoSlot aspect="330 / 248" label="Carrie" className="w-full h-full" />
+        <Image
+          src={HERO_CUP_SRC}
+          alt="Xícara CARRIES no balcão"
+          fill
+          sizes="(max-width: 1024px) 22vw, 290px"
+          className="object-cover"
+          priority
+        />
+      </motion.div>
+      <motion.div
+        variants={photoRight}
+        className="relative w-[clamp(140px,22vw,290px)] aspect-[330/248] overflow-hidden rounded-[var(--radius-xl)] bg-(--carries-linen-deep)"
+      >
+        <Image
+          src={HERO_IMAGE_SRC}
+          alt="Carrie observando do canto preferido"
+          fill
+          sizes="(max-width: 1024px) 22vw, 290px"
+          className="object-cover"
+          priority
+        />
       </motion.div>
       <motion.div
         variants={photoSquare}
-        className="w-[clamp(120px,15vw,212px)] aspect-square mt-[clamp(80px,15vw,225px)]"
+        className="relative hidden sm:block w-[clamp(100px,13vw,180px)] aspect-square mt-[clamp(60px,13vw,180px)] overflow-hidden rounded-[var(--radius-xl)] border border-(--carries-dust-grey) bg-(--carries-linen-deep)"
       >
-        <PhotoSlot
-          aspect="1 / 1"
-          label="Carrie"
-          className="w-full h-full border border-(--carries-dust-grey)"
+        <video
+          src={HERO_VIDEO_SRC}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover"
         />
       </motion.div>
     </motion.div>
@@ -96,15 +131,17 @@ function HeroCopy() {
       variants={copyStagger}
       initial="hidden"
       animate="show"
-      className="relative flex flex-col gap-6 max-w-[1100px] mt-auto pt-10"
+      className="relative flex flex-col gap-5 lg:gap-6 pt-10 lg:pt-6 lg:mt-auto"
     >
       <motion.h1
         variants={headline}
-        className="leading-[1.15] tracking-[-0.01em] text-[clamp(34px,_5.8vw,_60px)] font-semibold"
+        className="leading-[1.15] tracking-[-0.01em] text-[clamp(36px,_5vw,_92px)] font-semibold"
       >
         {t.hero.h1Top}
         <br />
-        <span className="text-(--carries-ash-brown)">{t.hero.h1Bottom}</span>
+        <span className="text-(--carries-ash-brown) lg:whitespace-nowrap">
+          {t.hero.h1Bottom}
+        </span>
       </motion.h1>
 
       <motion.p
