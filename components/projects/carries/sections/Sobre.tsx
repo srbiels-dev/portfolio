@@ -12,50 +12,11 @@ const fadeUp = {
   transition: { duration: 0.7, ease: EASE },
 };
 
-function CupIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <path
-        d="M7 12h16v8a5 5 0 0 1-5 5h-6a5 5 0 0 1-5-5v-8Zm16 1h2a3 3 0 0 1 0 6h-2"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M12 7c0 1.5 1 2 1 3.5M16 7c0 1.5 1 2 1 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function PawIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <g stroke="currentColor" strokeWidth="1.6">
-        <ellipse cx="11" cy="11" rx="2" ry="2.6" />
-        <ellipse cx="21" cy="11" rx="2" ry="2.6" />
-        <ellipse cx="7" cy="16" rx="1.6" ry="2.2" />
-        <ellipse cx="25" cy="16" rx="1.6" ry="2.2" />
-        <path d="M16 16c-4 0-7 3-7 6 0 2 2 3 4 3s2-1 3-1 1 1 3 1 4-1 4-3c0-3-3-6-7-6Z" />
-      </g>
-    </svg>
-  );
-}
-
-function BeanIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <path
-        d="M12 6c-4 2-6 6-6 10s2 8 6 10c4-2 6-6 6-10S16 8 12 6Zm8 0c-2 1-3 3-3 5s1 4 3 5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-const ICONS = [CupIcon, PawIcon, BeanIcon];
+const BEM_ESTAR_ICONS = [
+  "/projetos/carries/Ela%20vem%20primeiro.svg",
+  "/projetos/carries/Espa%C3%A7o%20para%20todos.svg",
+  "/projetos/carries/Caf%C3%A9%20serio.svg",
+];
 
 export function CarriesSobre() {
   const { t } = useLanguage();
@@ -101,7 +62,7 @@ export function CarriesSobre() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {t.bemEstar.items.map((item, i) => {
-              const Icon = ICONS[i] ?? CupIcon;
+              const iconSrc = BEM_ESTAR_ICONS[i] ?? BEM_ESTAR_ICONS[0];
               return (
                 <motion.div
                   key={item.title}
@@ -109,9 +70,16 @@ export function CarriesSobre() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, ease: EASE, delay: i * 0.08 }}
-                  className="flex flex-col gap-4 text-(--carries-ash-brown)"
+                  className="flex flex-col gap-4"
                 >
-                  <Icon />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={iconSrc}
+                    alt=""
+                    width={56}
+                    height={56}
+                    className="h-32 w-32"
+                  />
                   <h3 className="text-[22px] font-medium leading-[1.2] text-(--color-text)">
                     {item.title}
                   </h3>
