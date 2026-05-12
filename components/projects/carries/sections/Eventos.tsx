@@ -63,6 +63,11 @@ function BarrigaTile() {
         playsInline
         preload="metadata"
         aria-hidden="true"
+        onEnded={(e) => {
+          const v = e.currentTarget;
+          v.currentTime = 0;
+          void v.play().catch(() => {});
+        }}
         className="w-full h-full object-contain"
       />
     </motion.div>
@@ -87,7 +92,7 @@ function EventTile({ ev, index }: { ev: EventItem; index: number }) {
         </span>
       </div>
 
-      <h3 className="mt-12 lg:mt-16 text-[clamp(26px,_3.2vw,_40px)] font-medium leading-[1.05] tracking-[-0.01em]">
+      <h3 className="mt-12 lg:mt-16 text-[clamp(22px,_2.6vw,_34px)] font-medium leading-[1.05] tracking-[-0.01em] whitespace-nowrap">
         {ev.date}
       </h3>
 
