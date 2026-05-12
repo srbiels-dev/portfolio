@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import { CalendarDays, PawPrint, Hand, ZapOff, type LucideIcon } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 import { useReserve } from "../ReserveContext";
 
@@ -13,28 +14,11 @@ const fadeUp = {
   transition: { duration: 0.7, ease: EASE },
 };
 
+const RULE_ICONS: LucideIcon[] = [CalendarDays, PawPrint, Hand, ZapOff];
+
 function RuleIcon({ i }: { i: number }) {
-  const paths = [
-    // calendar
-    "M8 4v3M16 4v3M4 9h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z",
-    // paw
-    "M12 14c-3 0-5 2-5 4 0 1.5 1.5 2 3 2s1.5-1 2-1 .5 1 2 1 3-.5 3-2c0-2-2-4-5-4Zm-3-5c1 0 1.5 1 1.5 2s-.5 2-1.5 2-1.5-1-1.5-2 .5-2 1.5-2Zm6 0c1 0 1.5 1 1.5 2s-.5 2-1.5 2-1.5-1-1.5-2 .5-2 1.5-2ZM6 11c.8 0 1.2.8 1.2 1.6S6.8 14 6 14s-1.2-.6-1.2-1.4S5.2 11 6 11Zm12 0c.8 0 1.2.8 1.2 1.6S18.8 14 18 14s-1.2-.6-1.2-1.4S17.2 11 18 11Z",
-    // dog head
-    "M8 8c0-2 2-3 4-3s4 1 4 3v2c0 2-2 4-4 4s-4-2-4-4V8Zm-2 1c0 3 1 5 2 6m12-6c0 3-1 5-2 6M10 9.5h.01M14 9.5h.01",
-    // no flash
-    "M11 4l-3 8h5l-3 8M5 5l14 14",
-  ];
-  return (
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d={paths[i] ?? paths[0]}
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+  const Icon = RULE_ICONS[i] ?? RULE_ICONS[0];
+  return <Icon size={28} strokeWidth={1.5} aria-hidden="true" />;
 }
 
 function MiniMap() {

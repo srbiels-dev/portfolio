@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "../LanguageContext";
 import { useReserve } from "../ReserveContext";
+import { CarriesLogo } from "../LogoMark";
 import { LanguageToggle } from "../LanguageToggle";
 
 export function CarriesNavbar() {
@@ -36,15 +37,8 @@ export function CarriesNavbar() {
         className="flex items-center justify-between gap-4 px-6 py-4"
         aria-label="CARRIES navigation"
       >
-        <a href="#top" className="flex items-center text-(--color-text)" aria-label="CARRIES">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/projetos/carries/Logo.svg"
-            alt="CARRIES"
-            width={93}
-            height={20}
-            className="h-5 w-auto"
-          />
+        <a href="#top" className="text-(--color-text)" aria-label="CARRIES">
+          <CarriesLogo className="h-5 w-[93px]" />
         </a>
 
         <ul className="hidden md:flex items-center gap-8 list-none">

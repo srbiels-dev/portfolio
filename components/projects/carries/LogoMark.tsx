@@ -50,3 +50,25 @@ export function Wordmark({ className = "" }: { className?: string }) {
     </span>
   );
 }
+
+const LOGO_SRC = "/projetos/carries/Logo.svg";
+
+export function CarriesLogo({ className = "" }: { className?: string }) {
+  return (
+    <span
+      role="img"
+      aria-label="CARRIES"
+      className={`inline-block bg-current ${className}`}
+      style={{
+        maskImage: `url(${LOGO_SRC})`,
+        maskSize: "contain",
+        maskRepeat: "no-repeat",
+        maskPosition: "left center",
+        WebkitMaskImage: `url(${LOGO_SRC})`,
+        WebkitMaskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        WebkitMaskPosition: "left center",
+      }}
+    />
+  );
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "../LanguageContext";
-import { LogoMark, Wordmark } from "../LogoMark";
+import { CarriesLogo } from "../LogoMark";
 
 export function CarriesFooter() {
   const { t } = useLanguage();
@@ -11,10 +11,7 @@ export function CarriesFooter() {
       <div className="max-w-[1200px] mx-auto flex flex-col gap-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div className="col-span-2 md:col-span-1 flex flex-col gap-3">
-            <div className="flex items-center gap-2">
-              <LogoMark size={32} className="text-(--carries-linen)" />
-              <Wordmark className="text-(--carries-linen)" />
-            </div>
+            <CarriesLogo className="h-6 w-[112px] text-(--carries-linen)" />
             <p className="text-[13px] opacity-70 max-w-[220px]">
               {t.visite.address} · {t.visite.neighborhood}
             </p>

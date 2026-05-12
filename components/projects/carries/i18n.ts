@@ -94,7 +94,7 @@ const pt: Copy = {
   },
   hero: {
     h1Top: "Um café agitado.",
-    h1Bottom: "Em Botafogo, em quatro patas curtas.",
+    h1Bottom: "Em Icaraí, em quatro patas curtas.",
     sub: "Café especial, cozinha lenta e uma dachshund chamada Carrie te observando do canto preferido dela.",
     signature: "com amor, Carrie",
     ctaPrimary: "Reservar mesa",
@@ -196,15 +196,15 @@ const pt: Copy = {
       },
       {
         q: "Tem estacionamento?",
-        a: "Não temos estacionamento próprio, mas há rotativo na quadra e metrô Botafogo a 6 min a pé.",
+        a: "Não temos estacionamento próprio, mas há rotativo na quadra e Plaza Shopping a 5 min a pé.",
       },
     ],
   },
   visite: {
     eyebrow: "Onde estamos",
     h2: "Visite a gente",
-    address: "Rua Voluntários da Pátria, 000",
-    neighborhood: "Botafogo · Rio de Janeiro",
+    address: "Avenida Quintino Bocaiúva, 000",
+    neighborhood: "Icaraí · Niterói",
     hours: "Terça a domingo · 8h às 19h",
     hoursNote: "segunda fechada — folga da Carrie",
     contactLabel: "Fale com a gente",
@@ -217,7 +217,7 @@ const pt: Copy = {
     newsletter: "Receba a agenda no e-mail",
     newsletterPlaceholder: "seu e-mail",
     newsletterCta: "Inscrever",
-    closing: "feito com amor em Botafogo",
+    closing: "feito com amor em Niterói",
   },
   reserve: {
     title: "Reservar mesa",
@@ -245,7 +245,7 @@ const en: Copy = {
   },
   hero: {
     h1Top: "A busy café.",
-    h1Bottom: "In Botafogo, on four short legs.",
+    h1Bottom: "In Icaraí, on four short legs.",
     sub: "Specialty coffee, slow food and a dachshund called Carrie keeping an eye on you from her favourite corner.",
     signature: "with love, Carrie",
     ctaPrimary: "Book a table",
@@ -347,15 +347,15 @@ const en: Copy = {
       },
       {
         q: "Is there parking?",
-        a: "No private parking, but there's metered street parking on the block and Botafogo metro is a 6-min walk.",
+        a: "No private parking, but there's metered street parking on the block and Plaza Shopping is a 5-min walk.",
       },
     ],
   },
   visite: {
     eyebrow: "Where we are",
     h2: "Come visit",
-    address: "Rua Voluntários da Pátria, 000",
-    neighborhood: "Botafogo · Rio de Janeiro",
+    address: "Avenida Quintino Bocaiúva, 000",
+    neighborhood: "Icaraí · Niterói",
     hours: "Tuesday to Sunday · 8am to 7pm",
     hoursNote: "closed Mondays — Carrie's day off",
     contactLabel: "Get in touch",
@@ -368,7 +368,7 @@ const en: Copy = {
     newsletter: "Get the agenda by e-mail",
     newsletterPlaceholder: "your email",
     newsletterCta: "Subscribe",
-    closing: "made with love in Botafogo",
+    closing: "made with love in Niterói",
   },
   reserve: {
     title: "Book a table",
