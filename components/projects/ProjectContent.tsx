@@ -43,7 +43,7 @@ function SectionBlock({
   body,
 }: {
   label: string;
-  heading: string;
+  heading?: string;
   body: string;
 }) {
   return (
@@ -52,9 +52,11 @@ function SectionBlock({
         {label}
       </span>
       <div className="flex flex-col gap-4 max-w-[760px]">
-        <h2 className="font-display text-text text-[28px] md:text-[36px] leading-[1.15] tracking-[-0.02em]">
-          {heading}
-        </h2>
+        {heading && (
+          <h2 className="font-display text-text text-[28px] md:text-[36px] leading-[1.15] tracking-[-0.02em]">
+            {heading}
+          </h2>
+        )}
         <p className="font-body text-text-secondary text-[16px] md:text-[18px] leading-[1.5]">
           {body}
         </p>
@@ -167,7 +169,7 @@ export function ProjectContent({ project }: { project: Project }) {
       {project.overview && (
         <SectionBlock
           label="Visão geral"
-          heading="Uma nova fase pediu uma nova página."
+          heading={project.overviewHeading}
           body={project.overview}
         />
       )}
@@ -175,7 +177,7 @@ export function ProjectContent({ project }: { project: Project }) {
       {project.challenge && (
         <SectionBlock
           label="Desafio"
-          heading="A página antiga falava com outro público."
+          heading={project.challengeHeading}
           body={project.challenge}
         />
       )}
@@ -183,25 +185,50 @@ export function ProjectContent({ project }: { project: Project }) {
       {project.solution && (
         <SectionBlock
           label="Solução"
-          heading="Narrativa em segmentos, ancorada em pessoas reais."
+          heading={project.solutionHeading}
           body={project.solution}
         />
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-        <GalleryPlaceholder aspect="4 / 5" />
-        <GalleryPlaceholder aspect="4 / 5" />
+        {project.gallery?.pair ? (
+          <>
+            <GalleryImage
+              src={project.gallery.pair[0]}
+              alt={`Imagem 1 do projeto ${project.name}`}
+              aspect="4 / 5"
+            />
+            <GalleryImage
+              src={project.gallery.pair[1]}
+              alt={`Imagem 2 do projeto ${project.name}`}
+              aspect="4 / 5"
+            />
+          </>
+        ) : (
+          <>
+            <GalleryPlaceholder aspect="4 / 5" />
+            <GalleryPlaceholder aspect="4 / 5" />
+          </>
+        )}
       </div>
 
       {project.impact && (
         <SectionBlock
           label="Impacto"
-          heading="Conversão no contexto, sem tirar o usuário do fluxo."
+          heading={project.impactHeading}
           body={project.impact}
         />
       )}
 
-      <GalleryPlaceholder aspect="16 / 9" />
+      {project.gallery?.wide ? (
+        <GalleryImage
+          src={project.gallery.wide}
+          alt={`Imagem do projeto ${project.name}`}
+          aspect="16 / 9"
+        />
+      ) : (
+        <GalleryPlaceholder aspect="16 / 9" />
+      )}
 
       <footer className="flex flex-col gap-6 items-start border-t border-(--color-border-subtle) pt-10 w-full">
         <span className="font-mono text-text-tertiary text-[14px] uppercase tracking-[0.06em]">
